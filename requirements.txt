@@ -3,5 +3,7 @@ numpy
 matplotlib
 seaborn
 pillow
-
+scikit-learn
+xgboost
+catboost
 -e .
