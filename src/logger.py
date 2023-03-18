@@ -2,24 +2,37 @@ import logging
 import os
 from datetime import datetime
 
-def record_logs(log:str):
-    LOG_FILE = f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log"
-    logs_path = os.path.join(os.getcwd(),"logs",LOG_FILE)
-    os.makedirs(logs_path, exist_ok=True)
+# def record_logs(log:str):
+    # LOG_FILE = f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log"
+    # logs_path = os.path.join(os.getcwd(),"logs",LOG_FILE)
+    # os.makedirs(logs_path, exist_ok=True)
 
-    LOG_FILE_PATH = os.path.join(logs_path,LOG_FILE)
+    # LOG_FILE_PATH = os.path.join(logs_path,LOG_FILE)
 
 
-    logging.basicConfig(
-        filename=LOG_FILE_PATH,
-        format="[ %(asctime)s ] %(lineno)d %(name)s - %(levelname)s - %(message)s",
-        level=logging.INFO,
-    )
+    # logging.basicConfig(
+    #     filename=LOG_FILE_PATH,
+    #     format="[ %(asctime)s ] %(lineno)d %(name)s - %(levelname)s - %(message)s",
+    #     level=logging.INFO,
+    # )
 
-    logging.info(log)
+    # logging.info(log)
+
+LOG_FILE = f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log"
+logs_path = os.path.join(os.getcwd(),"logs",LOG_FILE)
+os.makedirs(logs_path, exist_ok=True)
+
+LOG_FILE_PATH = os.path.join(logs_path,LOG_FILE)
+
+
+logging.basicConfig(
+    filename=LOG_FILE_PATH,
+    format="[ %(asctime)s ] %(lineno)d %(name)s - %(levelname)s - %(message)s",
+    level=logging.INFO,
+)
 
 
 
 if __name__=="__main__":
-    record_logs("logging test1")
+    # record_logs("logging test1")
     logging.info("Logging test2")
