@@ -6,4 +6,5 @@ pillow
 scikit-learn
 xgboost
 catboost
--e .
+dill
+# -e .
